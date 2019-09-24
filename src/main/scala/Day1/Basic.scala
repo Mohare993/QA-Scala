@@ -6,7 +6,7 @@ object Basic extends App {
   println("Hello World!")
 
   // Assignment
-  var helloWorld = "Hello World!"
+  val helloWorld = "Hello World!"
   println(helloWorld)
 
   // Parameters
@@ -32,8 +32,7 @@ object Basic extends App {
 
   // Strings 2
   def charReplace(str1: String, str2: String, char1: Char, char2: Char): Unit ={
-    val fullString = str1 + str2
-    println(fullString.replace(char1,char2))
+    println(str1.concat(str2).replace(char1,char2))
   }
 
   charReplace("Ha", "llo", 'a', 'e')
@@ -94,7 +93,31 @@ object Basic extends App {
     if (num == 1 ) 0
     else recursIteration(str, (num-1))
   }
-  recursIteration("elp", 1)
+  recursIteration("HELP!", 1)
+
+ // Iteration5
+  def recursIteration2(str: String, num: Int): Unit = {
+    println(str * num)
+    if (num == 1) 0
+    else recursIteration2(str, (num - 1))
+  }
+
+  iteration2("H", 5)
+
+  // Iteration6
+  def recursIteration3(str1: String, str2: String, num: Int): Unit = {
+
+    if (count % 3 == 0 && count % 5 == 0) print(str1.concat(str2))
+    else if (count % 5 == 0) print(str2 + ", ")
+    else if (count % 3 == 0) print(str1 + ", ")
+    else print(count + ", ")
+    if (num == 1) 0
+    else recursIteration3(str1, str2, (num - 1))
+  }
+
+  recursIteration3("Fizz","Buzz",15)
+
+
 
 
 

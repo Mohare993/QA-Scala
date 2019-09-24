@@ -1,4 +1,4 @@
  object Main extends App {
- var abc = "abc"
+ val abc = "abc"
    println(abc*4)
  }
