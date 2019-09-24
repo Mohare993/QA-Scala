@@ -76,7 +76,7 @@ object Basic extends App {
   def iteration2(str: String, num: Int): Unit =
     for (i <- 1 to num) println(str * num)
 
-  iteration2("H", 4)
+  iteration2("H", 10)
 
   // Iteration3
   def fizzBuzz(str1: String, str2: String, num: Int): Unit =
@@ -87,6 +87,16 @@ object Basic extends App {
     else print(i + ", ")
 
   fizzBuzz("Fizz","Buzz",15)
+
+  // Iteration4
+  def recursIteration(str: String, num: Int): Unit = {
+    println(str)
+    if (num == 1 ) 0
+    else recursIteration(str, (num-1))
+  }
+  recursIteration("elp", 1)
+
+
 
 
 }
