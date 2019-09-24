@@ -34,4 +34,13 @@ object Basic extends App {
 
 
 
+  // Strings 2
+  def charReplace(str1: String, str2: String, char1: Char, char2: Char): Unit ={
+    val fullString = str1 + str2
+    println(fullString.replace(char1,char2))
+  }
+
+  charReplace("Ha", "llo", 'a', 'e')
+
+
 }
