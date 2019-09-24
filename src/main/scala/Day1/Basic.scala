@@ -67,5 +67,17 @@ object Basic extends App {
   conditional2(0,0)
 
   // Iteration
+  def iteration(str: String, num: Int): Unit =
+    for (i <- 1 to num) println(str)
+
+  iteration("Hi", 3)
+
+  // Iteration2
+  def iteration2(str: String, num: Int): Unit =
+    for (i <- 1 to num) {
+      println(str * num)
+    }
+
+  iteration2("H", 4)
 
 }
