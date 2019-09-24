@@ -2,17 +2,22 @@ package Day1
 
 object Basic extends App {
 
+  // Hello World!
   println("Hello World!")
 
+  // Assignment
   var helloWorld = "Hello World!"
   println(helloWorld)
 
+  // Parameters
   def printWord(word: String) = println(word)
   printWord("test")
 
+  // Return types
   def printHelloWorld() = "Hello World!"
   println(printHelloWorld())
 
+  // Type Inference
   def returnAnyType(a: Any) = println(a)
   returnAnyType(2.003)
   returnAnyType(23)
@@ -20,11 +25,13 @@ object Basic extends App {
   returnAnyType("String")
 
 
-
+  // Strings
   def stringPrinting(str: String, num: Int) =
     println(str.takeRight(num))
 
   stringPrinting("Hello",3)
+
+
 
 
 }
