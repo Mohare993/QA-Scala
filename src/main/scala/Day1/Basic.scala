@@ -74,10 +74,19 @@ object Basic extends App {
 
   // Iteration2
   def iteration2(str: String, num: Int): Unit =
-    for (i <- 1 to num) {
-      println(str * num)
-    }
+    for (i <- 1 to num) println(str * num)
 
   iteration2("H", 4)
+
+  // Iteration3
+  def fizzBuzz(str1: String, str2: String, num: Int): Unit =
+    for (i <- 1 to num)
+    if (i%3 == 0 && i%5 ==0) print(str1 + str2)
+    else if (i%5 == 0) print(str2 + ", ")
+    else if (i%3 == 0) print(str1 + ", ")
+    else print(i + ", ")
+
+  fizzBuzz("Fizz","Buzz",15)
+
 
 }
