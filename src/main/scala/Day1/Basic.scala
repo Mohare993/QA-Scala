@@ -43,4 +43,14 @@ object Basic extends App {
   charReplace("Ha", "llo", 'a', 'e')
 
 
+  // Operators
+  def add(a: Int, b: Int) = a+b
+
+  println(add(3,4))
+
+  // Conditionals
+
+
+
+
 }
