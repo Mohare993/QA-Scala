@@ -16,6 +16,7 @@ object BrokenKeyboard extends App {
       linesIn += scala.io.StdIn.readLine()
       for (str <- linesIn) {
         var words = new ListBuffer[String]()
+        words += ""
         for (i <- textFile if i.forall(str.toList.contains)) yield {
           words += i
           println(str + " = " + i)
