@@ -106,11 +106,10 @@ object Basic extends App {
 
   // Iteration6
   def recursIteration3(str1: String, str2: String, num: Int): Unit = {
-
-    if (count % 3 == 0 && count % 5 == 0) print(str1.concat(str2))
-    else if (count % 5 == 0) print(str2 + ", ")
-    else if (count % 3 == 0) print(str1 + ", ")
-    else print(count + ", ")
+    if (num % 3 == 0 && num % 5 == 0) print(str1.concat(str2) + " ")
+    else if (num % 5 == 0) print(str2 + ", ")
+    else if (num % 3 == 0) print(str1 + ", ")
+    else print(num + ", ")
     if (num == 1) 0
     else recursIteration3(str1, str2, (num - 1))
   }
