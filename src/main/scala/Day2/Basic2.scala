@@ -11,7 +11,7 @@ object Basic2 extends App {
   patternMatch(2,4,true)
   patternMatch(2,4,false)
 
-  // Pattern Matching 2
+  // Pattern Matching 1.2
   case class Nums(num1: Int, num2: Int)
 
   def patternMatch2(nums: Any): Unit = nums match {
@@ -25,6 +25,15 @@ object Basic2 extends App {
   patternMatch2(Nums(4,0))
   patternMatch2(Nums(5,6))
   patternMatch2(Nums(0,0))
+
+
+  // Pattern Match 2
+  def patternMatch3(nums: Any): Unit = nums match {
+    case Nums(num1, num2) => println(num2,num1)
+  }
+
+  patternMatch2((1,2))
+
 
 
 }
