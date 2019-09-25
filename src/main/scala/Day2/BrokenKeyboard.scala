@@ -9,7 +9,7 @@ object BrokenKeyboard extends App {
     import scala.collection.mutable.ListBuffer
     import scala.io.Source
     val filename = "C:\\Users\\Administrator\\IdeaProjects\\QA-Scala\\src\\main\\scala\\Day2\\enable1.txt"
-    val lines1 = Source.fromFile(filename).getLines.toList
+    val textFile = Source.fromFile(filename).getLines.toList
     var linesIn = new ListBuffer[String]()
     println("Enter number of lines to read : ")
 
@@ -21,15 +21,11 @@ object BrokenKeyboard extends App {
     }
 
     for (str <- linesIn) {
-      str.toList
-      for (w <- lines1 if w.forall(str.toList.contains)) yield w
+      for (w <- textFile if w.forall(str.toList.contains)) yield println(str + " = " + w)
     }
-
 //    val chars = List('a', 'b')
 //    for (w <- lines1 if w.forall(chars.contains)) yield println(w)
 
     }
-
-
   brokenKeyboard()
 }
