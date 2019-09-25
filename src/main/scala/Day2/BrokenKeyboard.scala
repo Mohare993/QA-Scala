@@ -21,11 +21,14 @@ object BrokenKeyboard extends App {
     }
 
     for (str <- linesIn) {
-      for (w <- textFile if w.forall(str.toList.contains)) yield println(str + " = " + w)
+      var words = new ListBuffer[String]()
+      for (w <- textFile if w.forall(str.toList.contains)) yield {
+        words += w
+        println(str + " = " + w)
+      }
+      println("Max Word " + str + " = " + (words.maxBy(_.length)))
     }
-//    val chars = List('a', 'b')
-//    for (w <- lines1 if w.forall(chars.contains)) yield println(w)
+    }
 
-    }
   brokenKeyboard()
 }
