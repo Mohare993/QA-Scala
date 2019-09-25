@@ -10,8 +10,6 @@ object BrokenKeyboard extends App {
     var linesIn = new ListBuffer[String]()
     println("Enter number of lines to read : ")
     var numberOfLines = scala.io.StdIn.readInt
-
-
     while (numberOfLines > 0) {
       println("Enter chars : ")
       linesIn += scala.io.StdIn.readLine()
