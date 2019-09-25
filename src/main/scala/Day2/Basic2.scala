@@ -28,12 +28,10 @@ object Basic2 extends App {
 
 
   // Pattern Match 2
-  def patternMatch3(nums: Any): Unit = nums match {
-    case Nums(num1, num2) => println(num2,num1)
-  }
-
-  patternMatch2((1,2))
-
-
+//  def patternMatch3(nums: Any): Unit = nums match {
+//    case Nums(num1, num2) => println(num2,num1)
+//  }
+//
+//  patternMatch2((1,2))
 
 }
