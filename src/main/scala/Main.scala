@@ -1,7 +1,13 @@
- object Main extends App {
-   val abc = "abc"
-   println(abc*4)
+import Garage.{Car, Customer, Garage}
 
-   val set = scala.collection.mutable.Set(1,2,3,4,5)
-   println(set)
+object Main extends App {
+
+  val testGarage = new Garage
+  val Bob = new Customer("Bob", 23)
+  val car1 = new Car(1001, "ABC123", Bob)
+
+  testGarage.addVehicle(car1)
+
+
+
  }
