@@ -3,9 +3,9 @@ package Day2
 object Basic2 extends App {
 
   // Pattern Matching 1
-  def patternMatch(a: Int, b: Int, c: Boolean): Unit = c match {
-    case true => println(a + b)
-    case false => println(a*b)
+  def patternMatch(num1: Int, num2: Int, bool: Boolean): Unit = bool match {
+    case true => println(num1 + num2)
+    case false => println(num1*num2)
   }
 
   patternMatch(2,4,true)
