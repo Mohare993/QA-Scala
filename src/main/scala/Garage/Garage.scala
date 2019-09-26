@@ -20,12 +20,11 @@ class Garage {
     employees += employee
   }
 
-//  def fixVehicle(searchID: String): Unit = {
-//    vehicles.filter(_.vehicleID == searchID).foreach(_.isFixed = true)
-//  }
-
-  def calculateBills(vehicle: Vehicle): Unit = {
+  def fixVehicle(searchID: String): Unit = {
+    vehicles.filter(_.vehicleID == searchID).foreach(_.isFixed = true)
   }
+
+  def calculateBills(): Double = vehicles.size * 50
 
 
   def isGarageOpen(bool: Boolean): Unit = {

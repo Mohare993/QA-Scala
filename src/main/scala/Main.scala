@@ -15,4 +15,6 @@ object Main extends App {
   testGarage.removeVehicle(1004)
   testGarage.garageContents()
 
+  println(testGarage.calculateBills())
+
  }
