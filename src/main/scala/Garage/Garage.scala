@@ -20,9 +20,9 @@ class Garage {
     employees += employee
   }
 
-  def fixVehicle(searchID: String): Unit = {
-    vehicles.filter(_.vehicleID == searchID).foreach(_.isFixed = true)
-  }
+//  def fixVehicle(searchID: String): Unit = {
+//    vehicles.filter(_.vehicleID == searchID).foreach(_.isFixed = true)
+//  }
 
   def calculateBills(vehicle: Vehicle): Unit = {
   }

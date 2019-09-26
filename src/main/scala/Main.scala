@@ -12,6 +12,7 @@ object Main extends App {
   testGarage.addVehicle(car2)
   testGarage.addVehicle(car3)
   println(testGarage.vehicles)
+  testGarage.removeVehicle(1004)
   testGarage.garageContents()
 
 

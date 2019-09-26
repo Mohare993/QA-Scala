@@ -1,11 +1,8 @@
 package Garage
 
-class Vehicle (vehicleID: Int, regNo: String, isFixed: Boolean, owner: Customer) {
+abstract case class Vehicle (vehicleID: Int, regNo: String,  model: String, isFixed: Boolean, owner: Customer) {
 
 }
 
-object Vehicle {
-  def apply(vehicleID: Int, regNo: String, isFixed: Boolean, owner: Customer): Vehicle = new Vehicle(vehicleID, regNo, isFixed, owner)
-}
 
 
