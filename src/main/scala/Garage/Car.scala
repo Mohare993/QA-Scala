@@ -1,7 +1,10 @@
 package Garage
 
-class Car(vehicleID: Int, regNo: String, owner: Customer) extends Vehicle(vehicleID, regNo, owner){
-  override def toString() = s"Car $vehicleID : $regNo : $owner)"
+class Car(vehicleID: Int, regNo: String, model: String, isFixed: Boolean, owner: Customer) extends Vehicle (vehicleID, regNo, isFixed, owner) {
+  override def toString() = s"Car = Model: $model, Reg: $regNo, Owner: $owner"
 }
+
+
+
 
 
