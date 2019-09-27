@@ -12,7 +12,6 @@ object CreditCardNums extends App {
       nums /= 10
     }
 
-
   }
 
   identifyCheck(49927398716L)

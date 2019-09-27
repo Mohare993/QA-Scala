@@ -39,19 +39,17 @@ object MorseTranslator extends App {
                      "--..." -> "7",
                      "---.." -> "8",
                      "----." -> "9",
-                     "-----" -> "0")
+                     "-----" -> "0",
+                      "/" -> " ")
 
   def morseTranslator(morse: String): Unit = {
     var decode = ""
     val codeArray = morse.split(" ")
-      for (i <- codeArray) {
+          for (i <- codeArray) {
         decode += morseMap.getOrElse(i, "")
       }
     println(decode)
   }
 
-
   morseTranslator(".... . .-.. .-.. --- / -.. .- .. .-.. -.-- / .--. .-. --- --. .-. .- -- -- . .-. / --. --- --- -.. / .-.. ..- -.-. -.- / --- -. / - .... . / -.-. .... .- .-.. .-.. . -. --. . ... / - --- -.. .- -.--")
-
-
 }
