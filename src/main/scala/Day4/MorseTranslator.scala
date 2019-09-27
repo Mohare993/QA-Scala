@@ -1,5 +1,7 @@
 package Day4
 
+import scala.collection.mutable.ListBuffer
+
 object MorseTranslator extends App {
 
   val morseMap = Map(".-" -> "A",
@@ -40,10 +42,16 @@ object MorseTranslator extends App {
                      "-----" -> "0")
 
   def morseTranslator(morse: String): Unit = {
-
+    var decode = ""
+    val codeArray = morse.split(" ")
+      for (i <- codeArray) {
+        decode += morseMap.getOrElse(i, "")
+      }
+    println(decode)
   }
 
 
+  morseTranslator(".... . .-.. .-.. --- / -.. .- .. .-.. -.-- / .--. .-. --- --. .-. .- -- -- . .-. / --. --- --- -.. / .-.. ..- -.-. -.- / --- -. / - .... . / -.-. .... .- .-.. .-.. . -. --. . ... / - --- -.. .- -.--")
 
 
 }
