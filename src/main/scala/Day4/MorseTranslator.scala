@@ -16,6 +16,5 @@ object MorseTranslator extends App {
       }
     println(decode)
   }
-
   morseTranslator(".... . .-.. .-.. --- / .--. .-. --- --. .-. .- -- -- . .-. ")
 }
