@@ -11,25 +11,26 @@ object MorseTranslator extends App {
   def morseTranslator(morse: String): Unit = {
     var decode = ""
     val codeArray = morse.split(" ")
-          for (i <- codeArray) {
-        decode += morseMap.getOrElse(i, "")
-      }
+    for (i <- codeArray) {
+      decode += morseMap.getOrElse(i, "")
+    }
     println(decode)
   }
 
   morseTranslator(".... . .-.. .-.. --- / .--. .-. --- --. .-. .- -- -- . .-. ")
+
+
+  def morseEncoder(text: String): Unit = {
+    var encode = ""
+    val revMap = morseMap map { case (k, v) => (v, k) }
+    val codeArray = text.toUpperCase.toCharArray
+    for (i <- codeArray) {
+      encode += revMap.getOrElse(i.toString, "")
+    }
+    println(encode)
+  }
+
+  morseEncoder("Hello Programmer")
+
 }
 
-//
-//  def morseEncoder(text: String): Unit = {
-//    var encode = ""
-//    val codeArray = text.toArray
-//    for ( i <- codeArray) {
-//      encode += morseMap.getOrElse(_.i, " ")
-//    }
-//    println(encode)
-//  }
-//
-//  morseEncoder("test")
-//
-//}

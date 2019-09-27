@@ -2,13 +2,12 @@ package Day4
 
 object LumberJack extends App {
 
-  def storageGrid (size: Int): Unit = {
-    var grid = Array.ofDim[Int](size,size)
+//  val grid = getStorageGrid()
+
+  def getStorageGrid(size: Int): Unit = {
+    var grid = Array.ofDim[Int](size, size)
     print(grid.map(_.mkString).mkString("\n"))
+    return grid
 
   }
-
-  storageGrid(3)
-
-
 }

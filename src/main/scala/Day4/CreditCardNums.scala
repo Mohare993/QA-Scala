@@ -15,7 +15,6 @@ object CreditCardNums extends App {
         if (newCardNumber % 10 == 0) println("Number is Valid")
         else println("Number is invalid")
     }
-
   identityCheck(49927398716L)
   identityCheck(1112324255)
   }
