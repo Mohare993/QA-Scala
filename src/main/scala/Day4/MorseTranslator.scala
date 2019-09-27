@@ -18,18 +18,18 @@ object MorseTranslator extends App {
   }
 
   morseTranslator(".... . .-.. .-.. --- / .--. .-. --- --. .-. .- -- -- . .-. ")
+}
 
-
+//
 //  def morseEncoder(text: String): Unit = {
 //    var encode = ""
-//    val codeArray = text.sliding(1).toArray
+//    val codeArray = text.toArray
 //    for ( i <- codeArray) {
-//      encode += morseMap.getOrElse(i, "")
-//      for { (k,v) <- codeArray if v.contains(value) } yield k
+//      encode += morseMap.getOrElse(_.i, " ")
 //    }
 //    println(encode)
 //  }
-
-
-
-}
+//
+//  morseEncoder("test")
+//
+//}
