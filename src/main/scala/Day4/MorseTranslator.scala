@@ -16,5 +16,20 @@ object MorseTranslator extends App {
       }
     println(decode)
   }
+
   morseTranslator(".... . .-.. .-.. --- / .--. .-. --- --. .-. .- -- -- . .-. ")
+
+
+//  def morseEncoder(text: String): Unit = {
+//    var encode = ""
+//    val codeArray = text.sliding(1).toArray
+//    for ( i <- codeArray) {
+//      encode += morseMap.getOrElse(i, "")
+//      for { (k,v) <- codeArray if v.contains(value) } yield k
+//    }
+//    println(encode)
+//  }
+
+
+
 }
