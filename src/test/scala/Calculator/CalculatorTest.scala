@@ -36,4 +36,12 @@ class CalculatorTest extends BaseTestingClass {
     }
   }
 
+  "Divide by 0" should "return IllegalArgumentException" in {
+    assertThrows[IllegalArgumentException] {
+      cal.divide(8, 0)
+    }
+  }
+
+
+
 }
