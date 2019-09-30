@@ -14,6 +14,4 @@ object Calculator extends App {
   def divide(num1: Int, num2: Int) =
     num1 / num2
 
-
-
 }
