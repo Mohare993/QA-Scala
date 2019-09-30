@@ -45,6 +45,8 @@ class CalculatorTest extends BaseTestingClass {
     }
   }
 
+  assertTypeError("num1: String = 1")
+
 
 
 }
