@@ -16,6 +16,9 @@ class CalculatorTest extends BaseTestingClass {
     assertResult(cal.sum(1, 2)) {
       3
     }
+    assertResult(cal.sum(6, 2)) {
+      8
+    }
   }
 
   "Sub method" should "return the subtraction of two values" in {
