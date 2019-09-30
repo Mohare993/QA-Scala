@@ -1,17 +1,22 @@
 package Calculator
 
+
+import java.lang.annotation.AnnotationTypeMismatchException
+
 import Resources.BaseTestingClass
 
 class CalculatorTest extends BaseTestingClass {
-  "An empty Set" should "have size 0" in {
-    assert(Set.empty.size == 0)
+
+  "Sum method" should "return the sum of two values" in {
+    assertResult(Day5.Calculator.sum(1,2)){3}
   }
 
-  it should "produce NoSuchElementException when head is invoked" in {
-    assertThrows[NoSuchElementException] {
-      Set.empty.head
-    }
+  "Sub method" should "return the subtraction of two values" in {
+    assertResult(Day5.Calculator.sub(10,4)){6}
   }
+
+
+
 
 
 }
