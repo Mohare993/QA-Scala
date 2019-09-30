@@ -1,6 +1,6 @@
 package Day5
 
-object Calculator extends App {
+class Calculator {
 
   def sum(num1: Int, num2: Int) =
     num1 + num2

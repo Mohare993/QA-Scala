@@ -1,7 +1,5 @@
 package Day5
 
-import scala.collection.mutable.ListBuffer
-
 object PrimeNumbers extends App {
 
   def isPrime(n: Int) = (2 until n) forall (n % _ != 0)
@@ -9,4 +7,5 @@ object PrimeNumbers extends App {
 
   isPrime(3000000)
 }
+
 
