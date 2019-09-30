@@ -15,6 +15,13 @@ class CalculatorTest extends BaseTestingClass {
     assertResult(Day5.Calculator.sub(10,4)){6}
   }
 
+  "Multiply method" should "return the multiplication of two values" in {
+    assertResult(Day5.Calculator.multiply(5,5)){25}
+  }
+
+  "Divide method" should "return the division of two values" in {
+    assertResult(Day5.Calculator.divide(70,7)){10}
+  }
 
 
 
