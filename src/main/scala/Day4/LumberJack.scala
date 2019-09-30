@@ -6,15 +6,15 @@ object LumberJack extends App {
   var logPile: List[Int] = List(1, 1, 1, 2, 1, 3, 1, 4, 1)
   var count = 0
 
-  def lumberjack(): Unit = {
-    var count = 0
-    println("Enter the size of the grid : ")
-    var gridSize = scala.io.StdIn.readInt
-    println("Enter the number of the logs : ")
-    var numberOfLogs = scala.io.StdIn.readInt
-    println("Enter the number of the logs in current log pile : ")
-    var logPile = scala.io.StdIn.readLine().toList
-  }
+//  def lumberjack(): Unit = {
+//    var count = 0
+//    println("Enter the size of the grid : ")
+//    var gridSize = scala.io.StdIn.readInt
+//    println("Enter the number of the logs : ")
+//    var numberOfLogs = scala.io.StdIn.readInt
+//    println("Enter the number of the logs in current log pile : ")
+//    var logPile = scala.io.StdIn.readLine().toList
+//  }
 
   def getStorageGrid(): Unit = {
     if (count % gridSize == 0) {
