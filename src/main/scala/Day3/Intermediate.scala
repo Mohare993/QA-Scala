@@ -2,7 +2,7 @@ package Day3
 
 import java.util.TimeZone
 
-object Intermediate extends App {
+class Intermediate {
 
   // Functional 1
   val timeZones: Unit = java.util.TimeZone.getAvailableIDs().map(_.split("/"))
