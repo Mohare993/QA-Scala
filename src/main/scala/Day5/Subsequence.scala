@@ -16,5 +16,6 @@ object Subsequence extends App {
   }
 
   println(longestCommonSubsequence("ABSFSDFG", "ABCF"))
+
 }
 

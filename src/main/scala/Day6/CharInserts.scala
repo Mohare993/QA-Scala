@@ -5,4 +5,5 @@ object CharInserts extends App {
   def charInserts() = {}
 
 
+
 }
