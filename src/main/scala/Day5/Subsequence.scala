@@ -1,7 +1,5 @@
 package Day5
 
-import scala.math.max
-
 object Subsequence extends App {
 
   def getAllSubstrings(str: String): Set[String] = {

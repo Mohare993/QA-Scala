@@ -34,7 +34,4 @@ class IntermediateTest extends BaseTestingClass {
     assertResult(intermediate.tooHot(80, false)) {true}
   }
 
-
-
-
 }
