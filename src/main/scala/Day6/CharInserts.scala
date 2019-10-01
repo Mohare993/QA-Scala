@@ -1,5 +1,8 @@
 package Day6
 
-class CharInserts {
+object CharInserts extends App {
+
+  def charInserts() = {}
+
 
 }
