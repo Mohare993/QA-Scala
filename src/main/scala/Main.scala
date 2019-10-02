@@ -17,4 +17,5 @@ object Main extends App {
 
   println(testGarage.calculateBills())
 
+
  }

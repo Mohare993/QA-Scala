@@ -1,7 +1,5 @@
 package Day5
 
-import scala.math.max
-
 object Subsequence extends App {
 
   def getAllSubstrings(str: String): Set[String] = {
@@ -16,5 +14,6 @@ object Subsequence extends App {
   }
 
   println(longestCommonSubsequence("ABSFSDFG", "ABCF"))
+
 }
 
