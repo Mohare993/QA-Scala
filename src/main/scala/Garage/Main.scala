@@ -33,6 +33,9 @@ object Main extends App {
   val car3 = new Car(1004, "ABC12e3", "Ford", true, Bob)
 
   addCustomer(Bob.toDoc())
+  Thread.sleep(3000)
+  mongoClient.closeConnection()
+
 
 
 
