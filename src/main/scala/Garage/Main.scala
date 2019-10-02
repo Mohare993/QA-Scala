@@ -27,6 +27,27 @@ object Main extends App {
       })
   }
 
+  def deleteById(id: Int, collection: MongoCollection[Document]) = {
+    collection.deleteOne(equal("_id", id)).headOption().onComplete{
+      case Success(value) => println("Deleted")
+      case Failure(error) => error.printStackTrace()
+    }
+  }
+
+  def updateName(id: Int, newName: String, collection: MongoCollection[Document]) = {
+    collection.updateOne(equal("_id", id), set("fullName", newName)).headOption().onComplete{
+      case Success(value) => println(s"The value has been updated")
+      case Failure(error) => error.printStackTrace()
+    }
+  }
+
+  def findById(id: Int, collection: MongoCollection[Document]) = {
+    collection.find(equal("_id", id)).headOption().onComplete{
+      case Success(value) => println(s"The value we've been waiting for is: ${value.getOrElse("")}")
+      case Failure(error) => error.printStackTrace()
+    }
+  }
+
 
 
 
@@ -34,9 +55,17 @@ object Main extends App {
   val car1 = new Car(1001, "ABC123", "B", false,Bob)
   val car2 = new Car(1002, "ABC12f3", "Ford", true, Bob)
   val car3 = new Car(1004, "ABC12e3", "Ford", true, Bob)
+  val employee1 = new Employee("Ben", 2333, true)
 
-  addDocument(customerCollection, Bob.toDoc)
-  addDocument(vehicleCollection, car1.todoc)
+//  addDocument(customerCollection, Bob.toDoc)
+//  addDocument(vehicleCollection, car1.toDoc)
+//  deleteById(1001, vehicleCollection)
+//  updateName(23, "Test2", customerCollection)
+//  findById(23, customerCollection)
+//  addDocument(employeeCollection, employee1.toDoc)
+  deleteById(2333, employeeCollection)
+  findById(2333, employeeCollection)
+
   Thread.sleep(3000)
   connection.closeConnection(mongoClient)
 
