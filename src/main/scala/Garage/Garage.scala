@@ -52,7 +52,7 @@ class Garage {
         " | RegNo. : " + vehicle("regNo").asString().getValue +
         " | Model : " + vehicle("model").asString().getValue +
         " | IsFixed : " + vehicle("isFixed").asBoolean().getValue +
-      " | Owner : " + vehicle.get("owner").get.asDocument().get("fullName")
+      " | Owner : " + vehicle.get("owner").get.asDocument().get("fullName").asString().getValue
       )
     }
   }
