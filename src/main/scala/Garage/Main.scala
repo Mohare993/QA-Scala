@@ -28,16 +28,18 @@ object Main extends App {
 //  findById(2333, employeeCollection)
 
 
-  Halfords.registerCustomer(Bob)
-  Halfords.registerEmployee(employee1)
-  Halfords.addVehicle(car1)
-  Halfords.addVehicle(car2)
+//  Halfords.registerCustomer(Bob)
+//  Halfords.registerEmployee(employee1)
+//  Halfords.addVehicle(car1)
+//  Halfords.addVehicle(car2)
+//
+//  Halfords.fixVehicle(1002, false)
+//  Halfords.fixVehicle(1001, true)
 
-  Halfords.fixVehicle(1002, false)
-  Halfords.fixVehicle(1001, true)
+
   Halfords.garageContents()
 
 
 
-  Thread.sleep(3000)
+  Thread.sleep(5000)
 }

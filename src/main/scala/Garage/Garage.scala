@@ -1,5 +1,8 @@
 package Garage
 
+import com.mongodb.BasicDBObject
+import org.mongodb.scala.bson.BsonValue
+
 import scala.collection.mutable.ListBuffer
 
 class Garage {
@@ -44,7 +47,14 @@ class Garage {
   def garageContents(): Unit ={
     println("Garage contents are:")
     val vehicles = vehicleCollection.find()
-    vehicles.foreach(println)
+    for (vehicle <- vehicles) {
+      println("Vehicle = ID : " + vehicle("_id").asInt32().getValue +
+        " | RegNo. : " + vehicle("regNo").asString().getValue +
+        " | Model : " + vehicle("model").asString().getValue +
+        " | IsFixed : " + vehicle("isFixed").asBoolean().getValue +
+      " | Owner : " + vehicle.get("owner").get.asDocument().get("fullName")
+      )
+    }
   }
 
 
