@@ -10,11 +10,12 @@ import scala.util.{Failure, Success}
 
 object Main extends App {
 
-  val mongoClient = new DBConnection("mongodb://localhost")
-  val database = mongoClient.getDB("garage")
-  val employeeCollection = mongoClient.getCollection(database,"employees")
-  val vehicleCollection = mongoClient.getCollection(database,"vehicles")
-  val customerCollection = mongoClient.getCollection(database,"customers")
+  val connection = new DBConnection
+  val mongoClient = connection.getClient("mongodb://localhost")
+  val database = connection.getDB(mongoClient, "garage")
+  val employeeCollection = connection.getCollection(database,"employees")
+  val vehicleCollection = connection.getCollection(database,"vehicles")
+  val customerCollection = connection.getCollection(database,"customers")
 
 
   def addCustomer(cust: Document) = {
@@ -34,7 +35,7 @@ object Main extends App {
 
   addCustomer(Bob.toDoc())
   Thread.sleep(3000)
-  mongoClient.closeConnection()
+  connection.closeConnection(mongoClient)
 
 
 

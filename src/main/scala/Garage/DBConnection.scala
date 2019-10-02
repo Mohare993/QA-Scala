@@ -2,20 +2,22 @@ package Garage
 
 import org.mongodb.scala.{MongoClient, MongoDatabase}
 
-class DBConnection(location : String) {
+class DBConnection {
 
-  val mongoClient: MongoClient = MongoClient(location)
+  def getClient(client: String) = {
+    MongoClient(client)
+  }
 
-  def getDB(dbName: String) = {
-       mongoClient.getDatabase(dbName)
+  def getDB(client: MongoClient, dbName: String) = {
+     client.getDatabase(dbName)
   }
 
   def getCollection(db: MongoDatabase, collection: String) = {
     db.getCollection(collection)
   }
 
-  def closeConnection(): Unit ={
-    mongoClient.close()
+  def closeConnection(client: MongoClient): Unit ={
+    client.close()
   }
 
 }
