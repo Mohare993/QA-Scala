@@ -10,47 +10,8 @@ import scala.util.{Failure, Success}
 
 object Main extends App {
 
-  val connection = new DBConnection
-  val mongoClient = connection.getClient("mongodb://localhost")
-  val database = connection.getDB(mongoClient, "garage")
-  val employeeCollection = connection.getCollection(database,"employees")
-  val vehicleCollection = connection.getCollection(database,"vehicles")
-  val customerCollection = connection.getCollection(database,"customers")
 
-
-  def addDocument(collection: MongoCollection[Document], doc: Document) = {
-    collection.insertOne(doc)
-      .subscribe(new Observer[Completed] {
-        override def onNext(result: Completed): Unit = println("Inserted")
-        override def onError(e: Throwable): Unit = println(s"Failed ${e.getStackTrace.toString}")
-        override def onComplete(): Unit = println("Completed")
-      })
-  }
-
-  def deleteById(id: Int, collection: MongoCollection[Document]) = {
-    collection.deleteOne(equal("_id", id)).headOption().onComplete{
-      case Success(value) => println("Deleted")
-      case Failure(error) => error.printStackTrace()
-    }
-  }
-
-  def updateName(id: Int, newName: String, collection: MongoCollection[Document]) = {
-    collection.updateOne(equal("_id", id), set("fullName", newName)).headOption().onComplete{
-      case Success(value) => println(s"The value has been updated")
-      case Failure(error) => error.printStackTrace()
-    }
-  }
-
-  def findById(id: Int, collection: MongoCollection[Document]) = {
-    collection.find(equal("_id", id)).headOption().onComplete{
-      case Success(value) => println(s"The value we've been waiting for is: ${value.getOrElse("")}")
-      case Failure(error) => error.printStackTrace()
-    }
-  }
-
-
-
-
+  val Halfords = new Garage
   val Bob = new Customer(fullName ="Bob", customerID = 23)
   val car1 = new Car(1001, "ABC123", "B", false,Bob)
   val car2 = new Car(1002, "ABC12f3", "Ford", true, Bob)
@@ -63,15 +24,20 @@ object Main extends App {
 //  updateName(23, "Test2", customerCollection)
 //  findById(23, customerCollection)
 //  addDocument(employeeCollection, employee1.toDoc)
-  deleteById(2333, employeeCollection)
-  findById(2333, employeeCollection)
+//    DB.deleteById(23, customerCollection)
+//  findById(2333, employeeCollection)
+
+
+  Halfords.registerCustomer(Bob)
+  Halfords.registerEmployee(employee1)
+  Halfords.addVehicle(car1)
+  Halfords.addVehicle(car2)
+
+  Halfords.fixVehicle(1002, false)
+  Halfords.fixVehicle(1001, true)
+  Halfords.garageContents()
+
+
 
   Thread.sleep(3000)
-  connection.closeConnection(mongoClient)
-
-
-
-
-
-
 }
