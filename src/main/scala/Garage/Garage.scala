@@ -1,30 +1,43 @@
 package Garage
 
+import com.mongodb.BasicDBObject
+import org.mongodb.scala.bson.BsonValue
+
 import scala.collection.mutable.ListBuffer
 
 class Garage {
 
-  var vehicles = new ListBuffer[Vehicle]()
-  var employees = new ListBuffer[Employee]()
+  val DB = new DBMethods
+  val connection = new DBConnection
+  val mongoClient = connection.getClient("mongodb://localhost")
+  val database = connection.getDB(mongoClient, "garage")
+  val employeeCollection = connection.getCollection(database,"employees")
+  val vehicleCollection = connection.getCollection(database,"vehicles")
+  val customerCollection = connection.getCollection(database,"customers")
+
   var isOpen = true
 
   def addVehicle(vehicle: Vehicle): Unit ={
-    vehicles += vehicle
+      DB.addDocument(vehicleCollection, vehicle.toDoc)
   }
 
   def removeVehicle(searchID: Int): Unit = {
-    vehicles = vehicles.filter(_.vehicleID != searchID).filter(_.model != searchID)
+    DB.deleteById(searchID, vehicleCollection)
   }
 
   def registerEmployee(employee: Employee): Unit = {
-    employees += employee
+    DB.addDocument(employeeCollection, employee.toDoc)
   }
 
-  def fixVehicle(searchID: String): Unit = {
-    vehicles.filter(_.vehicleID == searchID).foreach(_.isFixed = true)
+  def registerCustomer(customer: Customer): Unit = {
+    DB.addDocument(customerCollection, customer.toDoc)
   }
 
-  def calculateBills(): Double = vehicles.size * 50
+  def fixVehicle(searchID: Int, isFixed: Boolean): Unit = {
+    DB.updateVehicleFix(searchID, isFixed, vehicleCollection)
+  }
+
+//  def calculateBills(): Double = vehicles.size * 50
 
 
   def isGarageOpen(bool: Boolean): Unit = {
@@ -32,8 +45,16 @@ class Garage {
   }
 
   def garageContents(): Unit ={
-  println("Garage contents are:")
-  vehicles.map(println(_))
+    println("Garage contents are:")
+    val vehicles = vehicleCollection.find()
+    for (vehicle <- vehicles) {
+      println("Vehicle = ID : " + vehicle("_id").asInt32().getValue +
+        " | RegNo. : " + vehicle("regNo").asString().getValue +
+        " | Model : " + vehicle("model").asString().getValue +
+        " | IsFixed : " + vehicle("isFixed").asBoolean().getValue +
+      " | Owner : " + vehicle.get("owner").get.asDocument().get("fullName").asString().getValue
+      )
+    }
   }
 
 
